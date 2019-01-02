@@ -1,0 +1,386 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	background: #f4f4f4;
+}
+ul,ol{
+	list-style-type: none;
+}
+
+.clearfix{
+	zoom:1;
+}
+
+.app{
+	width: 100%;
+	height: 100%;
+}
+.app .app_header{
+	width: 100%;
+	height: 52px;
+	background: #fff;
+	box-shadow: 0 5px 5px #d9d9d9;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+
+.app .app_header .add{
+	margin-left: 17px;
+	width: 19px;
+	height: 19px;
+	background: url(../images/add.png) no-repeat;
+	margin-top: 16px;
+	float: left;
+	cursor: pointer;
+}
+.app .app_header ul{
+	float: left;
+	margin-left: 10px;
+}
+.app .app_header ul li{
+	color: #5d5d5d;
+	float: left;
+	width: 92px;
+	height: 52px;
+	line-height: 52px;
+	text-align: center;
+	cursor: pointer;
+}
+.app .app_header ul li:hover,.app .app_header ul li.active{
+	background: #f7f7f7;
+}
+
+
+
+.app .app_header .search{
+	float: left;
+	margin-left: 10px;
+	width: 218px;
+	height: 30px;
+	border: 1px solid #eeeeee;
+	background: #fafafa;
+	box-sizing: border-box;
+	margin-top: 10px;
+	border-radius: 4px;
+}
+
+.app .app_header .search .icon{
+	width: 14px;
+	height: 14px;
+	display: block;
+	background: url(../images/search.png) no-repeat;
+	float: left;
+	margin:8px 0 0 16px;
+}
+.app .app_header .search .input_box{
+	margin-left: 30px;
+	height: 30px;
+}
+
+.app .app_header .search .input_box input{
+	padding-left: 6px;
+	width: 100%;
+	border: none;
+	background: none;
+	outline: none;
+	height: 30px;
+	display: block;
+	box-sizing: border-box;
+}
+
+.app .app_wrapper{
+	height: calc(100% - 52px);
+}
+.app .app_wrapper .app_filter{
+	width: 100%;
+	height: 44px;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+
+.app .app_wrapper .app_filter .tabs{
+	float: left;
+}
+
+.app .app_wrapper .app_filter .tabs ul li{
+	float: left;
+	width: 80px;
+	height: 44px;
+	line-height: 44px;
+	font-size: 14px;
+	color: #333333;
+	cursor: pointer;
+	text-align: center;
+}
+.app .app_wrapper .app_filter .tabs ul li:hover,.app .app_wrapper .app_filter .tabs ul li.active{
+	color: #2da3fd;
+}
+
+.app .app_wrapper .app_filter .tabs ul li.all:hover{
+	color: #333333;
+}
+
+.app .app_wrapper .app_filter .tabs ul li .drop-list{
+	width: 100%;
+	position: relative;
+}
+
+.app .app_wrapper .app_filter .tabs ul li .drop-list .drop-btn{
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+}
+.app .app_wrapper .app_filter .tabs ul li .drop-list .drop-btn i{
+	width: 10px;
+	height: 10px;
+	background: url(../images/triangle.png) no-repeat;
+	display: block;
+	float: right;
+	margin-top: 17px;
+	margin-right: 10px;
+}
+.app .app_wrapper .app_filter .tabs ul li .drop-list .drop-btn .content{
+	margin-right: 22px;
+	display: block;
+	height: 44px;
+	line-height: 44px;
+	overflow: hidden;
+}
+.app .app_wrapper .app_filter .tabs ul li .drop-list .drop-menu{
+	display: none;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 44px;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+.app .app_wrapper .app_filter .tabs ul li .drop-list .drop-menu .items{
+	border-bottom: 1px solid #ccc;
+}
+.app .app_wrapper .app_filter .tabs ul li .drop-list .drop-menu .items:hover{
+	background: #f5f5f5;
+}
+
+
+.app .app_wrapper .app_filter .tabs ul li .drop-list:hover .drop-menu{
+	display: block;
+}
+
+.app .app_wrapper .app_filter .operate{
+	float: right;
+}
+
+.app .app_wrapper .app_filter .operate .items{
+	float: right;
+	font-size: 12px;
+	color: #aaaaaa;
+	height: 44px;
+	line-height: 44px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.app .app_wrapper .app_filter .operate .items:hover{
+	color: #2da3fd;
+}
+
+.app .app_wrapper .app_filter .operate .more i{
+	width: 20px;
+	height: 20px;
+	background: url(../images/more.png) no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.app .app_wrapper .app_filter .operate .sort i{
+	width: 15px;
+	height: 15px;
+	background: url(../images/sort.png) no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 4px;
+
+}
+.app .app_wrapper .app_filter .operate .filter i{
+	width: 18px;
+	height: 18px;
+	background: url(../images/filter.png) no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 4px;
+	margin-top: -2px;
+}
+
+.app .app_wrapper .app_container{
+	width: 100%;
+	height: calc(100% - 44px);
+}
+
+.app .app_wrapper .app_container .app_tasks_list{
+	width: 338px;
+	float: left;
+	height: 100%;
+	padding: 0 8px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+.app .app_wrapper .app_container .app_tasks_list .create_box{
+	width: 100%;
+	height: 48px;
+	border: 1px solid #e6e6e6;
+	background: #fff;
+	box-sizing: border-box;
+	flex-shrink: 0;
+}
+.app .app_wrapper .app_container .app_tasks_list .create_box .icon{
+	width: 14px;
+	height: 14px;
+	background: url(../images/create.png) no-repeat;
+	float: left;
+	margin-left: 20px;
+	margin-top: 17px;
+}
+
+
+.app .app_wrapper .app_container .app_tasks_list .create_box .content{
+	margin-left: 43px;
+}
+
+.app .app_wrapper .app_container .app_tasks_list .create_box .content input{
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	border: none;
+	background: none;
+	outline: none;
+}
+
+
+.app .app_wrapper .app_container .app_tasks_list .tasks_list{
+	flex-grow: 1;
+	margin-top: 8px;
+	border:1px solid #e6e6e6;
+	background: #fff;
+	overflow: auto;
+}
+
+
+.app .app_wrapper .app_container .app_tasks_list .tasks_list li{
+	padding: 20px;
+	border-bottom: 1px solid #e6e6e6;
+	cursor: pointer;
+}
+
+
+.app .app_wrapper .app_container .app_tasks_list .tasks_list li:hover,.app .app_wrapper .app_container .app_tasks_list .tasks_list li.active{
+	background: #f7f7f7
+}
+
+
+
+.app .app_wrapper .app_container .app_tasks_list .tasks_list li .top{
+	font-size: 14px;
+	color: #333333;
+	overflow: hidden;
+}
+.app .app_wrapper .app_container .app_tasks_list .tasks_list li .bottom{
+	font-size: 12px;
+	color: #999999;
+	height: 20px;
+	margin-top: 4px;
+}
+
+
+.app .app_wrapper .app_container .app_tasks_list .tasks_list li .bottom .manager{
+	float: left;
+}
+
+.app .app_wrapper .app_container .app_tasks_list .tasks_list li .bottom .time{
+	float: right;
+}
+
+.app .app_wrapper .app_container .app_tasks_detail{
+	background: #eee;
+	height: 100%;
+	margin-left: 338px;
+	padding: 0 30px 0 30px;
+	line-height: 28px;
+
+}
+
+.app .app_wrapper .app_container .app_tasks_detail .detail_top{
+	padding-top: 20px;
+}
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_a{
+	font-size: 19px;
+}
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_a1{
+	float: right;
+	font-size: 12px;
+	color: #aaa;
+}
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_a2{
+	float: right;
+	padding-right: 20px;
+	font-size: 12px;
+	color: #aaa;
+}
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_a3{
+	float: right;
+	font-size: 12px;
+	padding-right: 20px;
+	color: #aaa;
+}
+
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_ab{
+	font-size: 14px;
+}
+
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_b{
+	float: left;
+}
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_b .top_b1{
+	color: red;
+}
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_c{
+    float: left;
+	margin-left: 25px;
+}
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_d{
+	float: left;
+	width: 325px;
+	margin-left: 25px;
+	color: #2da3fd;
+	overflow: hidden;
+}
+
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_f{
+    float: left;
+    padding-left: 40px;
+    font-size: 14px;
+}
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_f1{
+	color: #aaa;
+	font-size: 8px;
+}
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_aa{
+    padding-top: 20px;
+}
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_g{
+    float: left;
+	padding-left: 80px;
+	font-size: 14px;
+}
+.app .app_wrapper .app_container .app_tasks_detail .detail_top .top_g1{
+	color: #aaa;
+	font-size: 8px;
+}
