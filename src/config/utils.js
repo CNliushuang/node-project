@@ -1,4 +1,13 @@
 const httpAgent = function(url, requestType, param, successCb,erroCb){
+
+  if(publicData.token && publicData.comp_id){
+    if(url.indexOf('?') >= 0){
+      url = url + '&token=' + publicData.token + '&comp_id=' + publicData.comp_id + '&plat=web&build=999999';
+    }else{
+      url = url + '?token=' + publicData.token + '&comp_id=' + publicData.comp_id + '&plat=web&build=999999';
+    }
+  }
+
   $.ajax({
     type: requestType,
     url: url,
