@@ -25,15 +25,13 @@ var app = {
     })
   },
   getTaskList:function(){
+    template.helper('timesToDate',timesToDate);
     let url = '/ftask/api/v3/task/filter.json?start=0&limit=30&sort=%7B%22plan_end_date%22%3A1%7D&id=3&status=WAITING&status=RUNNING&status=WAITING_AGREE&status=POST_PONE'
     httpAgent(url,'GET',{},(data) => {
       console.log(data)
       $('.tasks_list').html('');
-      
-
-
-
-
+      var html = template('test', data);
+      $('.tasks_list').html(html);
 
     })
  

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>首页</title>
     <script src="<%= htmlWebpackPlugin.options.url %>static/jquery/jquery.min.js"></script>
+    <script src="<%= htmlWebpackPlugin.options.url %>static/art-template/template.js"></script>
     <script src="<%= htmlWebpackPlugin.options.url %>src/config/utils.js"></script>
     <script src="<%= htmlWebpackPlugin.options.url %>src/js/app.js"></script>
     <link href="<%= htmlWebpackPlugin.options.url %>src/study/css/index.css" rel="stylesheet" type="text/css">
@@ -57,13 +58,7 @@
               <div class="content"><input type="text" placeholder="快速新建任务"></div>
             </div>
             <ul class="tasks_list">
-              <li>
-                <div class="top">企业微信产品开发</div>
-                <div class="bottom clearfix">
-                  <div class="manager">负责人：向南</div>
-                  <div class="time">12-11到期</div>
-                </div>
-              </li>
+              
             </ul>
           </div>
 
@@ -92,5 +87,29 @@
         </div>
       </div>
     </div>
+
+    <script id="test" type="text/html">
+      {{each list as value i}}
+          <li>
+            <div class="top">{{value.name}}</div>
+            <div class="bottom clearfix">
+              <div class="manager">负责人：
+                {{if value.rel.manager}}
+                  {{value.rel.manager[0].nick_name}}
+                {{else}}
+                  未设置
+                {{/if}}
+              </div>
+              <div class="time">{{value.create_date | timesToDate:'yyyy-MM-dd HH:mm:ss'}}</div>
+            </div>
+          </li>
+      {{/each}}
+
+    </script>
+
+
+
+
+
   </body>
 </html>
