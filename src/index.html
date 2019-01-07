@@ -90,7 +90,7 @@
 
     <script id="test" type="text/html">
       {{each list as value i}}
-          <li>
+          <li class="item" data-id="{{value.uuid}}">
             <div class="top">{{value.name}}</div>
             <div class="bottom clearfix">
               <div class="manager">负责人：

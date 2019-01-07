@@ -9,7 +9,22 @@ var app = {
     let _this = this;
     console.log("app init"),
     // _this.getTaskList();
+    _this.bindEvent();
     _this.getLoginInfo();
+  },
+  bindEvent:function(){
+    var _this = this;
+    $(function(){
+      $('.tasks_list').unbind()
+      .on('click','li',function(){
+        var $this = $(this);
+        var uuid = $this.attr('data-id');
+        $this.addClass('active').siblings().removeClass('active');
+        _this.getTaskDetail(uuid);
+
+      })
+    })
+    
   },
   getLoginInfo:function(){
     let url = '/ftask/proxy/user/login_un_check.json';
@@ -32,9 +47,18 @@ var app = {
       $('.tasks_list').html('');
       var html = template('test', data);
       $('.tasks_list').html(html);
-
     })
  
+  },
+  getTaskDetail(uuid){
+      let url = '/ftask/api/v3/task/detail/'+uuid+'.json'
+      httpAgent(url,'GET',{},(data) => {
+        console.log(data)
+        
+      })
+
+
+
   }
 }
 
